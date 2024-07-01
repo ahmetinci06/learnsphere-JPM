@@ -1,18 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Links from '../components/Links.astro';
-import '../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import Links from '../../components/Links.astro'
+import '../../styles/global.css'
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-	<Links/>
-		<h1>Welcome to <span class="text-gradient">Learn Sphere</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
+        <Links/>
+		<h1>About <span class="text-gradient">Learn Sphere</span></h1>
+        <h2>... and my new <span class="text-gradient">Project!</span></h2>
+        <p class="instructions">I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!
+        </p>
+        <p class="instructions">This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!
+        </p>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
