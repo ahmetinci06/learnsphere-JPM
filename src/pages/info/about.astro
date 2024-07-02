@@ -1,7 +1,8 @@
 ---
-import Card from '../../components/Card.astro';
-import Links from '../../components/Links.astro'
-import '../../styles/global.css'
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/global.css";
 const pageTitle = "Learn Sphere";
 const identity = {
   firstName: "Sarah",
@@ -13,40 +14,62 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = true;
 const goal = 3;
+const operatingSystem = "Windows";
+const quantity = 2;
+const footwear = "Sneakers";
+const student = true;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta class="main"/>
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-	<Links/>
-	<h1>About <span class="text-gradient">{pageTitle}</span></h1>
-	<h2>... and my new <span class="text-gradient">Project!</span></h2>
-    <p class="instructions">I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!
-	</p>
-	<p class="instructions">This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!
-	</p>
-  <p class="instructions">Here are a few facts about me:</p>
-<ul>
-  <li class="instructions">My name is {identity.firstName}.</li>
-  <li class="instructions">I live in {identity.country} and I work as a {identity.occupation}.</li>
-  {identity.hobbies.length >= 2 &&
-    <li class="instructions">Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-  }
-</ul>
-<p class="instructions">My skills are:</p>
-<ul class="instructions">
-  {skills.map((skill) => <li>{skill}</li>)}
-</ul>
-{happy && <p class="instructions">I am happy to be learning Astro!</p>}
+<Layout title={pageTitle}>
+  <main>
+    <Header />
+    <h1>About <span class="text-gradient">{pageTitle}</span></h1>
+    <h2>... and my new <span class="text-gradient">Project!</span></h2>
+    <p class="instructions">
+      I am working through Astro's introductory tutorial. This is the second
+      page on my website, and it's the first one I built myself!
+    </p>
+    <p class="instructions">
+      This site will update as I complete more of the tutorial, so keep checking
+      back and see how my journey is going!
+    </p>
+    <p class="instructions">Here are a few facts about me:</p>
+    <ul>
+      <li class="instructions">My name is {identity.firstName}.</li>
+      <li class="instructions">
+        I live in {identity.country} and I work as a {identity.occupation}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li class="instructions">
+            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+            {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p class="instructions">My skills are:</p>
+    <ul class="instructions">
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    {happy && <p class="instructions">I am happy to be learning Astro!</p>}
 
-{finished && <p class="instructions">I finished this tutorial!</p>}
+    {finished && <p class="instructions">I finished this tutorial!</p>}
 
-{goal === 3 ? <p class="instructions">My goal is to finish in 3 days.</p> : <p class="instructions">My goal is not 3 days.</p>}
-  </body>
-</html>
+    {
+      goal === 3 ? (
+        <p class="instructions">My goal is to finish in 3 days.</p>
+      ) : (
+        <p class="instructions">My goal is not 3 days.</p>
+      )
+    }
 
+    <p class="instructions">I use {operatingSystem}</p>
+
+    {student && <p class="instructions">I am still in school.</p>}
+
+    <p class="instructions">I have {quantity + 2} pairs of {footwear}</p>
+
+    <Footer />
+  </main>
+</Layout>

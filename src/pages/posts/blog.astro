@@ -1,47 +1,52 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Card from '../../components/Card.astro';
-import Links from '../../components/Links.astro'
-import '../../styles/global.css'
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/global.css";
 const pageTitle = "Learn Sphere";
 ---
 
 <Layout title={pageTitle}>
-	<main>
-        <Links/>
-		<h1>About <span class="text-gradient">{pageTitle}</span></h1>
-        <h2>... and my new <span class="text-gradient">Project!</span></h2>
-        <p class="instructions">I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!
-        </p>
-        <p class="instructions">This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!
-        </p>
-		<ul>
-			<li><a href="/posts/post-1/">Post 1</a></li>
-			<li><a href="/posts/post-2/">Post 2</a></li>
-			<li><a href="/posts/post-3/">Post 3</a></li>
-		  </ul>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+  <main>
+    <Header />
+    <h1>About <span class="text-gradient">{pageTitle}</span></h1>
+    <h2>... and my new <span class="text-gradient">Project!</span></h2>
+    <p class="instructions">
+      I am working through Astro's introductory tutorial. This is the second
+      page on my website, and it's the first one I built myself!
+    </p>
+    <p class="instructions">
+      This site will update as I complete more of the tutorial, so keep checking
+      back and see how my journey is going!
+    </p>
+    <ul>
+      <li><a href="/posts/post-1/">Post 1</a></li>
+      <li><a href="/posts/post-2/">Post 2</a></li>
+      <li><a href="/posts/post-3/">Post 3</a></li>
+    </ul>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="https://docs.astro.build/"
+        title="Documentation"
+        body="Learn how Astro works and explore the official API docs."
+      />
+      <Card
+        href="https://astro.build/integrations/"
+        title="Integrations"
+        body="Supercharge your project with new frameworks and libraries."
+      />
+      <Card
+        href="https://astro.build/themes/"
+        title="Themes"
+        body="Explore a galaxy of community-built starter themes."
+      />
+      <Card
+        href="https://astro.build/chat/"
+        title="Community"
+        body="Come say hi to our amazing Discord community. ❤️"
+      />
+    </ul>
+    <Footer />
+  </main>
 </Layout>
-
