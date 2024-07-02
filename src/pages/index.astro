@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Links from '../components/Links.astro';
 import '../styles/global.css';
+const pageTitle = "Home Page";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={pageTitle}>
 	<main>
 	<Links/>
 		<h1>Welcome to <span class="text-gradient">Learn Sphere</span></h1>

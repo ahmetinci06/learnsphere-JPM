@@ -7,6 +7,7 @@ main {
     color: white;
     font-size: 20px;
     line-height: 1.6;
+    -webkit-text-fill-color: chocolate;
 }
 .astro-a {
     position: absolute;
@@ -23,6 +24,10 @@ h1 {
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+    -webkit-text-fill-color: aqua;
+}
+h2 {
+    -webkit-text-fill-color: aqua;
 }
 .text-gradient {
     background-image: var(--accent-gradient);
@@ -38,6 +43,7 @@ h1 {
     background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
     padding: 1.5rem;
     border-radius: 8px;
+    -webkit-text-fill-color: antiquewhite;
 }
 .instructions code {
     font-size: 0.8em;
@@ -69,8 +75,12 @@ h1 {
 }
 html {
     font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+    background-image: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: 100%;
+    background-size: 100%;
 }
 code {
     font-family:
